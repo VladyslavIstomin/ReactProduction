@@ -1,7 +1,8 @@
 import {render} from "react-dom";
 import './style.scss';
+import {App} from "./App";
 
 render(
-    <h1>Hello</h1>,
+    <App />,
     document.getElementById('root')
 )
