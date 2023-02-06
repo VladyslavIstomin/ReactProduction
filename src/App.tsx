@@ -2,16 +2,16 @@ import {Link, Route, Routes} from "react-router-dom";
 import './styles/index.scss';
 import {AboutPageLazy} from "./pages/AboutPage/AboutPageLazy";
 import {MainPageLazy} from "./pages/MainPage/MainPageLazy";
-import {Suspense, useContext, useState} from "react";
-import {LOCALE_STORAGE_THEME_KEY, Theme, ThemeContext} from "./theme/ThemeContext";
+import {Suspense} from "react";
 import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 export const App = () => {
     const {theme, toggleTheme} = useTheme();
 
     return (
         <div className={`app ${theme}`}>
-            <div>
+            <div className={classNames('btn', {hovered: true, selectable: false}, ['cls1', 'cls2'])}>
                 <button onClick={toggleTheme}>Toggle Theme</button>
             </div>
             <Link to={'/'}>Main page link</Link>
