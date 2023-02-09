@@ -18,6 +18,17 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule {
         ],
     }
 
+    const babelLoader = {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env']
+            }
+        }
+    }
+
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -45,6 +56,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule {
         rules: [
             fileLoader,
             svgLoader,
+            babelLoader,
             tsLoader,
             scssLoader,
         ],
