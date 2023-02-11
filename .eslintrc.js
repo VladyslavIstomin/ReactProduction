@@ -6,7 +6,8 @@ module.exports = {
     'extends': [
         'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended'
+        'plugin:@typescript-eslint/recommended',
+        'plugin:i18next/recommended'
     ],
     'overrides': [],
     'parser': '@typescript-eslint/parser',
@@ -16,7 +17,8 @@ module.exports = {
     },
     'plugins': [
         'react',
-        '@typescript-eslint'
+        '@typescript-eslint',
+        'i18next'
     ],
     'rules': {
         'indent': ['error', 4],
@@ -26,7 +28,9 @@ module.exports = {
         'object-curly-spacing': ['error', 'always'],
         'react/react-in-jsx-scope': 'off',
         'no-implicit-globals': 'error',
-        'no-undef': 'error'
+        'no-undef': 'error',
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        'i18next/no-literal-string': ['error', { markupOnly: true }]
     },
     'globals': {
         __dirname: true,

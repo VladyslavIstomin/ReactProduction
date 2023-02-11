@@ -7,8 +7,10 @@
     "start": "webpack serve --env port=4000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "lint:ts": " eslint \"**/*.{ts, tsx}\"",
-    "lint:ts:fix": " eslint \"**/*.{ts, tsx}\" --fix"
+    "lint:ts": "eslint \"**/*.{ts,tsx}\"",
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:scss:fix": "stylelint \"**/*.scss\" --fix"
   },
   "repository": {
     "type": "git",
@@ -69,6 +71,7 @@
     "json-server": "^0.17.0",
     "loki": "^0.28.1",
     "mini-css-extract-plugin": "^2.5.3",
+    "postcss-scss": "^4.0.6",
     "react-refresh": "^0.12.0",
     "reg-cli": "^0.17.6",
     "regenerator-runtime": "^0.13.9",
