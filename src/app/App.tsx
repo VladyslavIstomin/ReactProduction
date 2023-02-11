@@ -10,7 +10,7 @@ export const App = () => {
 
     return (
         <div className={`app ${theme}`}>
-            <Suspense fallback="loading">
+            <Suspense fallback=''>
                 <Navbar />
                 <div className='content-page'>
                     <Sidebar />
