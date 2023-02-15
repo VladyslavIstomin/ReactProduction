@@ -11,7 +11,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const handleClick = () => {
         setCollapsed(state => !state);

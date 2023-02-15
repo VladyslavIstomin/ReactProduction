@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { Sidebar } from 'widgets/Sidebar';
 import { RenderWithTranslation } from 'shared/lib/tests/RenderWithTranslation';
-import { userEvent } from '@storybook/testing-library';
+import userEvent from '@testing-library/user-event';
 
 describe('Sidebar', () => {
     test('with only first param', () => {
