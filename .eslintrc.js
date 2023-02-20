@@ -26,7 +26,8 @@ module.exports = {
     'plugins': [
         'react',
         '@typescript-eslint',
-        'i18next'
+        'i18next',
+        'react-hooks'
     ],
     'rules': {
         'indent': ['error', 4],
@@ -40,7 +41,9 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
-        'react/display-name': 'off'
+        'react/display-name': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error'
     },
     'globals': {
         __dirname: true,
