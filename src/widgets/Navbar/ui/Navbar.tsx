@@ -22,10 +22,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             <Button onClick={toggleHandler} theme={ButtonTheme.CLEAR_INVERTED}>
                 {t('Sign in')}
             </Button>
-            <Modal isOpen={isOpen} onClose={toggleHandler}>
-                wrfarewf wrferwf gewrg ewrg werg werg werg werg
-                werg werg wreg erwg werg rweg rewg
-            </Modal>
+            <Modal isOpen={isOpen} onClose={toggleHandler}/>
         </header>
     );
 };
