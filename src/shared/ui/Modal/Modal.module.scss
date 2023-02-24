@@ -27,8 +27,8 @@
 
 .opened {
     display: block;
+}
 
-    .content {
-        transform: scale(1);
-    }
+.scaled .content {
+    transform: scale(1);
 }

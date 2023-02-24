@@ -12,7 +12,8 @@ export const Input = memo((props: InputProps) => {
         className,
         onChangeCallback,
         type = 'text',
-        label
+        label,
+        ...otherProps
     } = props;
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +26,8 @@ export const Input = memo((props: InputProps) => {
             <input
                 type={type}
                 onChange={onChangeHandler}
-                {...props}
+                className={className}
+                {...otherProps}
             />
         </label>
     );

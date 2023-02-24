@@ -1,6 +1,6 @@
 import cls from './Modal.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { FC, useCallback, useEffect } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
 
 interface ModalProps {
@@ -16,9 +16,11 @@ export const Modal: FC<ModalProps> = (props) => {
         isOpen,
         onClose
     } = props;
+    const [scaled, setScaled] = useState(false);
 
     const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen
+        [cls.opened]: isOpen,
+        [cls.scaled]: scaled
     };
 
     const closeHandler = () => {
@@ -36,6 +38,16 @@ export const Modal: FC<ModalProps> = (props) => {
             onClose();
         }
     }, [onClose]);
+
+    useEffect(() => {
+        if (isOpen) {
+            setTimeout(() => {
+                setScaled(true);
+            }, 100);
+        } else {
+            setScaled(false);
+        }
+    }, [isOpen]);
 
     useEffect(() => {
         if (isOpen) {

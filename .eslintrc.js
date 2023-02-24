@@ -40,7 +40,7 @@ module.exports = {
         'no-undef': 'error',
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error'
