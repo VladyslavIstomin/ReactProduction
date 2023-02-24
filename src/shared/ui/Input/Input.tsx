@@ -1,4 +1,3 @@
-import cls from './Input.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { InputHTMLAttributes, memo } from 'react';
 
@@ -21,7 +20,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <label className={classNames(cls.Input, {}, [])}>
+        <label className={classNames('', {}, [])}>
             {label}
             <input
                 type={type}
