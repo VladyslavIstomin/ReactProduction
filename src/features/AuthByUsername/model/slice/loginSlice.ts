@@ -5,7 +5,8 @@ import { LoginSchema } from '../type/LoginSchema';
 const initialState: LoginSchema = {
     username: '',
     password: '',
-    isLoading: false
+    isLoading: false,
+    error: ''
 };
 
 export const loginSlice = createSlice({

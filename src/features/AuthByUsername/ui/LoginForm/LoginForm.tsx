@@ -8,6 +8,7 @@ import { getLoginState } from '../../model/selector/getLoginState';
 import { loginActions } from '../../model/slice/loginSlice';
 import { memo, useCallback } from 'react';
 import { loginByUserName } from '../../model/services/loginByUsername/loginByUserName';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 interface LoginFormProps {
     className?: string
@@ -32,7 +33,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
-            {error && <div>{error}</div>}
+            <Text title={t('Enter username and password')} />
             <div>
                 <Input
                     type="text"
@@ -51,6 +52,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
                     onChangeCallback={onChangePassword}
                 />
             </div>
+            {error && <Text text={t('Invalid username or password')} theme={TextTheme.ERROR} />}
             <div className={cls.loginBtn}>
                 <Button
                     theme={ButtonTheme.OUTLINE}

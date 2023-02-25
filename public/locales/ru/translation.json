@@ -13,5 +13,8 @@
   "Increment": "Увеличить",
   "Decrement": "Уменьшить",
   "Username": "Имя",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "Invalid username or password": "Неверный логин или пароль",
+  "Enter username and password": "Введите логин и пароль",
+  "Sign out": "Выйти"
 }
