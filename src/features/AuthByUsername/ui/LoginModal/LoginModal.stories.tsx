@@ -4,6 +4,7 @@ import { LoginModal } from './LoginModal';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { loginReducer } from 'features/AuthByUsername';
 
 export default {
     title: 'features/LoginModal',
@@ -19,14 +20,16 @@ export const LoginElement = Template.bind({});
 LoginElement.args = {
     isOpen: true
 };
-LoginElement.decorators = [StoreDecorator({
-    login: { username: 'efwef', password: '123' }
-})];
+LoginElement.decorators = [StoreDecorator(
+    { login: { username: 'efwef', password: '123' } },
+    { login: loginReducer }
+)];
 
 export const LoginElementDark = Template.bind({});
 LoginElementDark.args = {
     isOpen: true
 };
-LoginElementDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    login: { username: 'efwef', password: '123' }
-})];
+LoginElementDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(
+    { login: { username: 'efwef', password: '123' } },
+    { login: loginReducer }
+)];
