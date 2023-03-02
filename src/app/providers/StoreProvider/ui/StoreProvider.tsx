@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { MapDispatchToProps, Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { StateScheme } from 'app/providers/StoreProvider/config/StateScheme';
 import { ReducersMapObject } from '@reduxjs/toolkit';
