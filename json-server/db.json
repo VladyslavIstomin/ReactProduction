@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Vlad",
+    "lastname": "Isto",
+    "age": 34,
+    "currency": "UA",
+    "country": "Ukraine",
+    "city": "Kharkov",
+    "username": "admin",
+    "avatar": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"
+  }
 }

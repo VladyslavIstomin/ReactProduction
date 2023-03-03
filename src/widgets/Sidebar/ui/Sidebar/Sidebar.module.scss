@@ -22,9 +22,11 @@
     }
 }
 
-.link {
-    margin-left: 10px;
-    opacity: 1;
+.items {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    flex-direction: column;
 }
 
 .collapsed {
@@ -49,21 +51,4 @@
     position: absolute;
     bottom: 32px;
     right: -32px;
-}
-
-.items {
-    display: flex;
-    margin-top: 20px;
-    margin-left: 30px;
-    flex-direction: column;
-}
-
-.item {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.icon {
-    fill: var(--inverted-primary-color);
 }

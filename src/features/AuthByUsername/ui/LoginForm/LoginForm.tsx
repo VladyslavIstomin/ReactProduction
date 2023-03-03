@@ -48,7 +48,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch, onSuccess, password, username]);
 
     return (
-        <DynamicModuleLoader reducers={dynamicReducers} removeAfterUnmount={true}>
+        <DynamicModuleLoader reducers={dynamicReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Enter username and password')} />
                 <div>

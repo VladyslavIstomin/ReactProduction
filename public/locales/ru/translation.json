@@ -16,5 +16,6 @@
   "Password": "Пароль",
   "Invalid username or password": "Неверный логин или пароль",
   "Enter username and password": "Введите логин и пароль",
-  "Sign out": "Выйти"
+  "Sign out": "Выйти",
+  "Profile page": "Страница профиля"
 }

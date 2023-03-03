@@ -3,6 +3,7 @@ import { useStore } from 'react-redux';
 import { StoreWithReducerManager } from 'app/providers/StoreProvider';
 import { StateSchemeKey } from 'app/providers/StoreProvider/config/StateScheme';
 import { Reducer } from '@reduxjs/toolkit';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export type ReducersList = {
     [name in StateSchemeKey]?: Reducer
@@ -22,16 +23,19 @@ export const DynamicModuleLoader: FC<DynamicModuleLoader> = (props) => {
         removeAfterUnmount
     } = props;
     const store = useStore() as StoreWithReducerManager;
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         Object.entries(reducers).forEach(([name, reducer]: ReducersListItem) => {
             store.reducerManager.add(name, reducer);
+            dispatch({ type: `@init/${name} reducer` });
         });
 
         return () => {
             Object.entries(reducers).forEach(([name, reducer]: ReducersListItem) => {
                 if (removeAfterUnmount) {
                     store.reducerManager.remove(name);
+                    dispatch({ type: `@destroy/${name} reducer` });
                 }
             });
         };
