@@ -4,7 +4,6 @@ import { Navbar } from './Navbar';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { LoginElement } from 'features/AuthByUsername/ui/LoginForm/LoginForm.stories';
 
 export default {
     title: 'widgets/Navbar',

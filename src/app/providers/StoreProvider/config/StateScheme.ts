@@ -5,6 +5,9 @@ import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/t
 import { CombinedState } from 'redux';
 import { createReduxStore } from './store';
 import { ProfileScheme } from 'entities/Profile';
+import { AxiosInstance } from 'axios';
+import { To } from '@remix-run/router';
+import { NavigateOptions } from 'react-router/dist/lib/context';
 
 export interface StateScheme {
     counter: CounterSchema;
@@ -28,4 +31,14 @@ export interface StoreWithReducerManager extends EnhancedStore<StateScheme> {
     reducerManager: ReducerManager
 }
 
-export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
+
+export interface ThunkExtraArg {
+    api: AxiosInstance,
+    navigation?: (to: To, options?: NavigateOptions) => void
+}
+
+export interface ThunkConfig<T> {
+    rejectValue: T,
+    extra: ThunkExtraArg
+}

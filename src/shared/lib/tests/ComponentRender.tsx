@@ -14,12 +14,12 @@ export interface RenderWithRouterOptions {
 export function ComponentRender(component: ReactNode, options: RenderWithRouterOptions = {}) {
     const { route = '/', initialState } = options;
     render(
-        <StoreProvider initialState={initialState as StateScheme}>
-            <MemoryRouter initialEntries={[route]}>
+        <MemoryRouter initialEntries={[route]}>
+            <StoreProvider initialState={initialState as StateScheme}>
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
                 </I18nextProvider>
-            </MemoryRouter>
-        </StoreProvider>
+            </StoreProvider>
+        </MemoryRouter>
     );
 }

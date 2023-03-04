@@ -17,7 +17,7 @@ export const Input = memo((props: InputProps) => {
     } = props;
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChangeCallback(e.target.value);
+        onChangeCallback?.(e.target.value);
     };
 
     return (

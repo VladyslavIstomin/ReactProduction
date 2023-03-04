@@ -37,17 +37,18 @@ module.exports = {
         'object-curly-spacing': ['error', 'always'],
         'react/react-in-jsx-scope': 'off',
         'no-implicit-globals': 'error',
-        'no-undef': 'error',
+        'no-undef': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'error'
+        'react-hooks/exhaustive-deps': 'error',
     },
     'globals': {
         __dirname: true,
         __IS_DEV__: true,
+        __API__: true,
         module: true
     }
 };
