@@ -7,22 +7,23 @@ export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         src: path.resolve(__dirname, '..', '..', 'src')
     };
-    config.resolve.modules.unshift(paths.src);
-    config.module.rules.push(buildCssLoader(true));
+    config.resolve?.modules?.unshift(paths.src);
+    config.module?.rules?.push(buildCssLoader(true));
 
-    const fileLoaderRule = config.module.rules.find(
-        (rule: RuleSetRule) => rule.test && /svg/.test(rule.test as string)
-    );
-    // @ts-ignore
-    fileLoaderRule.exclude = /\.svg$/;
+    const rules = config.module?.rules as RuleSetRule[];
+    config.module!.rules = rules.map((rule) => (
+        /svg/.test(rule.test as string)
+            ? { ...rule, exclude: /\.svg$/i }
+            : rule
+    ));
 
-    config.module.rules.push({
+    config.module?.rules?.push({
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack'],
     });
 
-    config.plugins.push(new DefinePlugin({
+    config.plugins?.push(new DefinePlugin({
         __IS_DEV__: true,
         __API__: true,
     }));
