@@ -1,6 +1,11 @@
 {
-  "Profile": "Профиль",
-  "Edit": "Редактировать",
   "Your name": "Ваше имя",
-  "Your last name": "Ваша фамилия"
+  "Your last name": "Ваша фамилия",
+  "Try to refresh": "Попытайтесь перезагрузить страницу",
+  "There is an error": "Произошла ошибка",
+  "City": "City",
+  "Your age": "Your age",
+  "Enter your username": "Enter your username",
+  "Enter avatar url": "Enter avatar url",
+  "Enter a currency": "Enter a currency"
 }

@@ -17,5 +17,10 @@
   "Invalid username or password": "Неверный логин или пароль",
   "Enter username and password": "Введите логин и пароль",
   "Sign out": "Выйти",
-  "Profile page": "Страница профиля"
+  "Profile page": "Страница профиля",
+  "Profile": "Профиль",
+  "Edit": "Редактировать",
+  "Cancel": "Отмена",
+  "Save": "Save",
+  "Enter a country": "Enter a country"
 }

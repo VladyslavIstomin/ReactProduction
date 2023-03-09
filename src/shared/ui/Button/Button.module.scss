@@ -23,6 +23,12 @@
     color: var(--primary-color);
 }
 
+.outline-red {
+    border: 1px solid var(--red-secondary);
+    background: none;
+    color: var(--red-secondary);
+}
+
 .background {
     background: var(--bg-color);
     color: var(--primary-color);

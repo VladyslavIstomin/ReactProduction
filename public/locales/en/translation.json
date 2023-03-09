@@ -17,5 +17,10 @@
   "Invalid username or password": "Invalid username or password",
   "Enter username and password": "Enter username and password",
   "Sign out": "Sign out",
-  "Profile page": "Profile page"
+  "Profile page": "Profile page",
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Enter a country": "Enter a country"
 }

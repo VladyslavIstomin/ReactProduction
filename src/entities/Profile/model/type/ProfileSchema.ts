@@ -1,31 +1,20 @@
-export enum Currency {
-    RUB = 'RUB',
-    UA = 'UA',
-    USD = 'USD',
-    EUR = 'EUR'
-}
-
-export enum Country {
-    UKRAINE = 'Ukraine',
-    BELARUS = 'Belarus',
-    KAZAKHSTAN = 'Kazakhstan',
-    RUSSIA = 'Russia',
-    ARMENIA = 'Armenia'
-}
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 
 export interface Profile {
-    first: string,
-    lastname: string,
-    age: 34,
-    currency: Currency,
-    country: Country,
-    city: string,
-    username: string,
-    avatar: string
+    first?: string,
+    lastname?: string,
+    age?: number,
+    currency?: Currency,
+    country?: Country,
+    city?: string,
+    username?: string,
+    avatar?: string
 }
 
 export interface ProfileScheme {
     data?: Profile;
+    form?: Profile;
     error?: string,
     isLoading: boolean;
     readonly: boolean;

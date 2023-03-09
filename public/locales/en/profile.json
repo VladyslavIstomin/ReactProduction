@@ -1,6 +1,11 @@
 {
-  "Profile": "Profile",
-  "Edit": "Edit",
   "Your name": "Your name",
-  "Your last name": "Your last name"
+  "Your last name": "Your last name",
+  "Try to refresh": "Try to refresh",
+  "There is an error": "There is an error",
+  "City": "City",
+  "Your age": "Your age",
+  "Enter your username": "Enter your username",
+  "Enter avatar url": "Enter avatar url",
+  "Enter a currency": "Enter a currency"
 }

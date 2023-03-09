@@ -1,10 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './Input.module.scss';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, { InputHTMLAttributes, memo } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
     className?: string;
     onChangeCallback?: (value: string) => void;
-    label?: string
+    label?: string;
+    readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -13,6 +15,7 @@ export const Input = memo((props: InputProps) => {
         onChangeCallback,
         type = 'text',
         label,
+        readonly,
         ...otherProps
     } = props;
 
@@ -20,13 +23,18 @@ export const Input = memo((props: InputProps) => {
         onChangeCallback?.(e.target.value);
     };
 
+    const mods: Mods = {
+        [cls.readonly]: readonly
+    };
+
     return (
-        <label className={classNames('', {}, [])}>
+        <label className={classNames('', { ...mods }, [])}>
             {label}
             <input
                 type={type}
                 onChange={onChangeHandler}
                 className={className}
+                readOnly={readonly}
                 {...otherProps}
             />
         </label>
