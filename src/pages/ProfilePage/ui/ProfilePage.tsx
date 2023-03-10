@@ -1,34 +1,48 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback, useEffect, useMemo } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/component/DynamicModuleLoader/DynamicModuleLoader';
 import {
     fetchProfileData,
-    getProfileData,
-    getProfileError, getProfileForm,
-    getProfileIsLoading, getProfileReadonly, profileActions,
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
     ProfileCard,
-    profileReducer
+    profileReducer, ValidateProfileErrors
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 const dynamicReducers: ReducersList = {
     profile: profileReducer
 };
 
 const ProfilePage = memo(() => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorsTranslates = useMemo(() => ({
+        [ValidateProfileErrors.SERVER_ERROR]: t('Server error'),
+        [ValidateProfileErrors.INCORRECT_COUNTRY]: t('Invalid country'),
+        [ValidateProfileErrors.INCORRECT_AGE]: t('Invalid age'),
+        [ValidateProfileErrors.INCORRECT_USER_DATA]: t('Invalid name or lastname'),
+    }), [t]);
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstName = useCallback((value: string) => {
@@ -66,6 +80,13 @@ const ProfilePage = memo(() => {
     return (
         <DynamicModuleLoader reducers={dynamicReducers} removeAfterUnmount>
             <ProfileHeader />
+            {validateErrors?.length && validateErrors.map((error) => (
+                <Text
+                    theme={TextTheme.ERROR}
+                    text={validateErrorsTranslates[error]}
+                    key={error}
+                />
+            ))}
             <ProfileCard
                 data={formData}
                 error={error}

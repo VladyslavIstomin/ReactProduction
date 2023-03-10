@@ -1,7 +1,8 @@
 export {
     Profile,
-    ProfileScheme
-} from './model/type/ProfileSchema';
+    ProfileScheme,
+    ValidateProfileErrors
+} from './model/type/ProfileScheme';
 
 export {
     profileReducer,
@@ -16,3 +17,4 @@ export { getProfileForm } from './model/selector/getProfileForm/getProfileForm';
 export { getProfileError } from './model/selector/getProfileError/getProfileError';
 export { getProfileIsLoading } from './model/selector/getProfileIsLoading/getProfileIsLoading';
 export { getProfileReadonly } from './model/selector/getProfileReadonly/getProfileReadonly';
+export { getProfileValidateErrors } from './model/selector/getProfileValidateErrors/getProfileValidateErrors';

@@ -7,5 +7,9 @@
   "Your age": "Your age",
   "Enter your username": "Enter your username",
   "Enter avatar url": "Enter avatar url",
-  "Enter a currency": "Enter a currency"
+  "Enter a currency": "Enter a currency",
+  "Server error": "Server error",
+  "Invalid country": "Invalid country",
+  "Invalid age": "Invalid age",
+  "Invalid name or lastname": "Invalid name or lastname"
 }

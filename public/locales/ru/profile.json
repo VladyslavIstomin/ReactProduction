@@ -3,9 +3,13 @@
   "Your last name": "Ваша фамилия",
   "Try to refresh": "Попытайтесь перезагрузить страницу",
   "There is an error": "Произошла ошибка",
-  "City": "City",
-  "Your age": "Your age",
-  "Enter your username": "Enter your username",
-  "Enter avatar url": "Enter avatar url",
-  "Enter a currency": "Enter a currency"
+  "City": "Город",
+  "Your age": "Ваш возраст",
+  "Enter your username": "Введите ваше имя",
+  "Enter avatar url": "Введите адрес аватарки",
+  "Enter a currency": "Введите валюту",
+  "Server error": "Ошибка сервера",
+  "Invalid country": "Неверная страна",
+  "Invalid age": "Некорректный возраст",
+  "Invalid name or lastname": "Неверное имя или фамилия"
 }
