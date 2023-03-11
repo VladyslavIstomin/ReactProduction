@@ -21,7 +21,7 @@ LoginElement.args = {
     isOpen: true
 };
 LoginElement.decorators = [StoreDecorator(
-    { login: { username: 'efwef', password: '123' } },
+    { login: { username: 'efwe', password: '1234' } },
     { login: loginReducer }
 )];
 
@@ -30,6 +30,6 @@ LoginElementDark.args = {
     isOpen: true
 };
 LoginElementDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(
-    { login: { username: 'efwef', password: '123' } },
+    { login: { username: 'efwe', password: '1234' } },
     { login: loginReducer }
 )];
