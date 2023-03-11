@@ -36,5 +36,4 @@ jobs:
         if: always()
       - name: Run screenshot tests
 #        run: npm run test:ui:ci
-        run: loki update --storiesFilter="^features\\/LoginModal Login Element Dark|shared\\/Modal Dark\$" --reactUri="file:./storybook-static"
         if: always()
