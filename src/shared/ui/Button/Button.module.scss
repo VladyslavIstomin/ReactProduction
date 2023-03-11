@@ -35,6 +35,12 @@
     border: none;
 }
 
+.background-secondary {
+    background: var(--secondary-color);
+    color: var(--inverted-secondary-color);
+    border: none;
+}
+
 .background-inverted {
     background: var(--inverted-bg-color);
     color: var(--inverted-primary-color);

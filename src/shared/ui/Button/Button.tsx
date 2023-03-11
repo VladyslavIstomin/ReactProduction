@@ -8,6 +8,7 @@ export const enum ButtonTheme {
     OUTLINE = 'outline',
     OUTLINE_RED = 'outline-red',
     BACKGROUND = 'background',
+    BACKGROUND_SECONDARY = 'background-secondary',
     BACKGROUND_INVERTED = 'background-inverted'
 }
 
