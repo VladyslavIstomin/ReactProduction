@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import avatar from 'shared/assets/tests/avatar.jpeg';
 
 export default {
     title: 'entities/ProfileCard',
@@ -26,7 +25,7 @@ Card.args = {
         country: Country.UKRAINE,
         city: 'Lviv',
         username: 'wef',
-        avatar
+        avatar: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg'
     }
 };
 
