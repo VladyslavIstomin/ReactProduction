@@ -5,7 +5,7 @@ import { SidebarItemType } from '../../model/Items';
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
-import { getUserState } from 'entities/User';
+import { getUserData } from 'entities/User';
 
 interface SidebarItemProps {
     item: SidebarItemType;
@@ -15,7 +15,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed, authOnly }: SidebarItemProps) => {
     const { t } = useTranslation();
-    const { authUser } = useSelector(getUserState);
+    const { authUser } = useSelector(getUserData);
 
     if (authOnly && !authUser) {
         return null;

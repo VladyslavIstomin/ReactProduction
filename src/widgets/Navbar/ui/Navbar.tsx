@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserState, userActions } from 'entities/User';
+import { getUserData, userActions } from 'entities/User';
 
 interface NavbarProps {
     className?: string
@@ -13,7 +13,7 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
     const { t, i18n } = useTranslation();
-    const { authUser } = useSelector(getUserState);
+    const { authUser } = useSelector(getUserData);
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
 
