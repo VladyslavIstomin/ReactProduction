@@ -4,7 +4,6 @@ import ProfilePage from './ProfilePage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { profileReducer } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import avatar from 'shared/assets/tests/avatar.jpeg';
