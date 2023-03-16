@@ -3,6 +3,7 @@
   "customSyntax": "postcss-scss",
   "rules": {
     "indentation": 4,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "no-missing-end-of-source-newline": null
   }
 }

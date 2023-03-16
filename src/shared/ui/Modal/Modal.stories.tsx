@@ -20,9 +20,9 @@ Light.args = {
     isOpen: true
 };
 
-// export const Dark = Template.bind({});
-// Dark.args = {
-//     children: 'Text text text',
-//     isOpen: true
-// };
-// Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Dark = Template.bind({});
+Dark.args = {
+    children: 'Text text text',
+    isOpen: true
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

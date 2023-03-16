@@ -1,6 +1,12 @@
 .Button {
     cursor: pointer;
     padding: 8px 15px;
+
+    &:hover {
+        opacity: 0.8;
+        fill-opacity: 80%;
+        stroke-opacity: 80%;
+    }
 }
 
 .clear {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Text, TextTheme } from './Text';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Text, TextAlign, TextSize, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -33,4 +33,18 @@ TitleTextError.args = {
     title: 'Title title',
     text: 'Text text text',
     theme: TextTheme.ERROR
+};
+
+export const TitleTextLarge = Template.bind({});
+TitleTextLarge.args = {
+    title: 'Title title',
+    text: 'Text text text',
+    size: TextSize.L
+};
+
+export const TitleTextCenter = Template.bind({});
+TitleTextCenter.args = {
+    title: 'Title title',
+    text: 'Text text text',
+    align: TextAlign.CENTER
 };

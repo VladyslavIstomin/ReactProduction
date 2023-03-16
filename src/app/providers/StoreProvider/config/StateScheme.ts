@@ -8,6 +8,7 @@ import { ProfileScheme } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { To } from '@remix-run/router';
 import { NavigateOptions } from 'react-router/dist/lib/context';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateScheme {
     counter: CounterSchema;
@@ -16,6 +17,7 @@ export interface StateScheme {
     // Async reducers
     login?: LoginSchema;
     profile?: ProfileScheme
+    articles?: ArticleDetailsSchema
 }
 
 export type StateSchemeKey  = keyof StateScheme;
