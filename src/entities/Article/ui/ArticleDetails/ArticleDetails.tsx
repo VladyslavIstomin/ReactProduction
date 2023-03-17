@@ -22,6 +22,7 @@ import { ArticleBlockType } from 'entities/Article/model/types/article';
 import { ArticleTextComponent } from 'entities/Article/ui/ArticleTextComponent/ArticleTextComponent';
 import { ArticleCodeComponent } from 'entities/Article/ui/ArticleCodeComponent/ArticleCodeComponent';
 import { ArticleImageComponent } from 'entities/Article/ui/ArticleImageComponent/ArticleImageComponent';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -38,12 +39,10 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const isLoading = useSelector(getArticleIsLoading);
     const error = useSelector(getArticleError);
     const article = useSelector(getArticleData);
-
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     const renderBlock = useCallback((block) => {
         switch (block.type) {
