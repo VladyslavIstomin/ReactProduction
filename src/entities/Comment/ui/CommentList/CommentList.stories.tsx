@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CommentList } from './CommentList';
+import { isLoading } from 'entities/Article/ui/ArticleDetails/ArticleDetails.stories';
 
 export default {
     title: 'entities/Comment/CommentList',
@@ -31,4 +32,9 @@ Normal.args = {
 export const Loading = Template.bind({});
 Loading.args = {
     isLoading: true
+};
+Loading.story = {
+    parameters: {
+        loki: { skip: true },
+    }
 };

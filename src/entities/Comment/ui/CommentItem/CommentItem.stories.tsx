@@ -25,3 +25,8 @@ export const Loading = Template.bind({});
 Loading.args = {
     isLoading: true
 };
+Loading.story = {
+    parameters: {
+        loki: { skip: true },
+    }
+};
