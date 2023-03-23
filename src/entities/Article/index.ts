@@ -4,3 +4,4 @@ export { articleDetailsActions, articleDetailsReducer } from './model/slice/arti
 
 export { Article } from './model/types/article';
 export { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
+export { getArticleData } from './model/selectors/getArticleDetails/getArticleDetails';

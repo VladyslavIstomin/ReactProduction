@@ -18,6 +18,8 @@ import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const dynamicReducers: ReducersList = {
     profile: profileReducer
@@ -25,6 +27,7 @@ const dynamicReducers: ReducersList = {
 
 const ProfilePage = memo(() => {
     const { t } = useTranslation('profile');
+    const { id } = useParams<{id: string}>();
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
@@ -39,11 +42,11 @@ const ProfilePage = memo(() => {
         [ValidateProfileErrors.INCORRECT_USER_DATA]: t('Invalid name or lastname'),
     }), [t]);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstName = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
