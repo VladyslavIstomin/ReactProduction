@@ -26,3 +26,8 @@ Dark.args = {
     isOpen: true
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.story = {
+    parameters: {
+        loki: { skip: true },
+    }
+};

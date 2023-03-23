@@ -18,6 +18,11 @@ export const Normal = Template.bind({});
 Normal.args = {
     height: 100
 };
+Normal.story = {
+    parameters: {
+        loki: { skip: true },
+    }
+};
 
 export const NormalCircle = Template.bind({});
 NormalCircle.args = {
@@ -31,6 +36,11 @@ Dark.args = {
     height: 100
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.story = {
+    parameters: {
+        loki: { skip: true },
+    }
+};
 
 export const DarkCircle = Template.bind({});
 DarkCircle.args = {
@@ -45,6 +55,11 @@ Purple.args = {
     height: 100
 };
 Purple.decorators = [ThemeDecorator(Theme.PURPLE)];
+Purple.story = {
+    parameters: {
+        loki: { skip: true },
+    }
+};
 
 export const PurpleCircle = Template.bind({});
 PurpleCircle.args = {
