@@ -7,7 +7,7 @@ import { RequireAuth } from 'app/providers/Router/ui/RequireAuth';
 export const AppRouter = memo(() => {
     const routeWithAuth = useCallback((route: AppRouteProps) => {
         const element = (
-            <div className='page-wrapper'>{route.element}</div>
+            <>{route.element}</>
         );
         return (
             <Route
