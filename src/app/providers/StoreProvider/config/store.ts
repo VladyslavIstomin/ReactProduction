@@ -10,8 +10,7 @@ import { CombinedState, Reducer } from 'redux';
 
 export function createReduxStore(
     initialState?: StateScheme,
-    asyncReducers?: ReducersMapObject<StateScheme>,
-    navigation?: (to: To, options?: NavigateOptions) => void
+    asyncReducers?: ReducersMapObject<StateScheme>
 ) {
     const rootReducers: ReducersMapObject<StateScheme> = {
         ...asyncReducers,
@@ -27,8 +26,7 @@ export function createReduxStore(
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             thunk: {
                 extraArgument: {
-                    api: $api,
-                    navigation,
+                    api: $api
                 }
             }
         })

@@ -42,8 +42,7 @@ export interface StoreWithReducerManager extends EnhancedStore<StateScheme> {
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 
 export interface ThunkExtraArg {
-    api: AxiosInstance,
-    navigation?: (to: To, options?: NavigateOptions) => void
+    api: AxiosInstance
 }
 
 export interface ThunkConfig<T> {
