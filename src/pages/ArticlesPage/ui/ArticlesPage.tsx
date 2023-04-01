@@ -15,9 +15,9 @@ import {
     getArticlesPageView
 } from '../model/selectors/articlesPageSelectors';
 import { ViewSelector } from 'features/ViewSelector';
-import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from 'pages/ArticlesPage/model/services/initArticlePage/initArticlePage';
+import { Page } from 'widgets/Page/Page';
 
 interface ArticlesPageProps {
     className?: string
@@ -35,7 +35,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
 
-    const onScrollHandler = useCallback(() => {
+    const onScrollCallback = useCallback(() => {
         dispatch(fetchNextArticlePage());
     }, [dispatch]);
 
@@ -50,7 +50,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount={false}>
             <Page
-                onScrollHandler={onScrollHandler}
+                onScrollCallback={onScrollCallback}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
                 <ViewSelector onViewClick={onViewClick} view={view}/>

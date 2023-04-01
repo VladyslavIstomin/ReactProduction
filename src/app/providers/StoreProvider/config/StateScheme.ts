@@ -12,10 +12,12 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollPositionSchema } from 'features/ScrollPosition';
 
 export interface StateScheme {
     counter: CounterSchema;
     user: UserSchema;
+    scroll: ScrollPositionSchema;
 
     // Async reducers
     login?: LoginSchema;
