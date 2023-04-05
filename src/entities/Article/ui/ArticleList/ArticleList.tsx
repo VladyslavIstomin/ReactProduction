@@ -11,6 +11,7 @@ interface ArticleListProps {
     isLoading?: boolean;
     articles: Article[];
     view?: ArticleView;
+    target?: string;
 }
 
 const getSkeleton = (view: ArticleView) => new Array(view == ArticleView.BIG ? 3 : 9)
@@ -25,12 +26,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className,
         isLoading,
         articles,
+        target,
         view = ArticleView.SMALL
     } = props;
 
     const renderArticle = useCallback((article: Article) => {
-        return <ArticleListItem article={article} view={view} key={article.id} className={cls.card} />;
-    }, [view]);
+        return <ArticleListItem target={target} article={article} view={view} key={article.id} className={cls.card} />;
+    }, [target, view]);
 
     if (!isLoading && !articles.length) {
         return (

@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { articleDetailsCommentsReducer } from '../model/slice/articleDetailsCommentsSlice';
+import { articleDetailsPageReducer } from '../model/slice';
 
 export default {
     title: 'pages/ArticleDetailsPage',
@@ -17,6 +18,6 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDe
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [StoreDecorator(
-    { articleDetailsComments: { ids: [], entities: {} } },
-    { articleDetailsComments: articleDetailsCommentsReducer }
+    { articleDetailsPage: {} },
+    { articleDetailsPage: articleDetailsPageReducer }
 )];
