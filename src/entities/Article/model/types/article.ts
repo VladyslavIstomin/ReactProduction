@@ -31,6 +31,7 @@ export interface ArticleBlockCode extends ArticleBlockBase {
 export type ArticleBlock = ArticleBlockImage | ArticleBlockText | ArticleBlockCode;
 
 export enum ArticleType {
+    ALL = 'ALL',
     IT = 'IT',
     SCIENCE = 'SCIENCE',
     ECONOMICS = 'ECONOMICS'
@@ -39,6 +40,17 @@ export enum ArticleType {
 export enum ArticleView {
     BIG = 'BIG',
     SMALL = 'SMALL'
+}
+
+export enum ArticleOrderType {
+    ASC = 'asc',
+    DESC = 'desc'
+}
+
+export enum ArticleSortType {
+    VIEWS = 'views',
+    TITLE = 'title',
+    CREATED = 'createdAt'
 }
 
 export interface Article {

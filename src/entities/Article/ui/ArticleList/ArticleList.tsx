@@ -32,6 +32,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return <ArticleListItem article={article} view={view} key={article.id} className={cls.card} />;
     }, [view]);
 
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                {t('Articles not found')}
+            </div>
+        );
+    }
+
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.length > 0 ? articles.map(renderArticle) : null}

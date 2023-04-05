@@ -17,10 +17,10 @@ describe('initArticlePage.test', () => {
                 _inited: false
             }
         });
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk({ get: (name:string) => name } as URLSearchParams);
 
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
-        expect(thunk.dispatch).toHaveBeenCalledTimes(4);
+        expect(fetchArticlesList).toHaveBeenCalledWith({ });
+        expect(thunk.dispatch).toHaveBeenCalledTimes(8);
     });
 
     test('reject fetch if state was inited', async () => {
@@ -35,7 +35,7 @@ describe('initArticlePage.test', () => {
                 _inited: true
             }
         });
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk({ get: (name:string) => name } as URLSearchParams);
 
         expect(fetchArticlesList).not.toHaveBeenCalled();
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);

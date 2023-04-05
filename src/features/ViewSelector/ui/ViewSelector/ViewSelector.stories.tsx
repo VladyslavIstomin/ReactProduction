@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ViewSelector } from './ViewSelector';
 
 export default {
-    title: 'shared/ViewSelector',
+    title: 'features/ViewSelector',
     component: ViewSelector,
     argTypes: {
         backgroundColor: { control: 'color' },

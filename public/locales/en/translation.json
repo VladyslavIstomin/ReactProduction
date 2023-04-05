@@ -25,5 +25,18 @@
   "Enter a country": "Enter a country",
   "Comments are not found": "Comments are not found",
   "Enter comment": "Enter comment",
-  "Send": "Send"
+  "Send": "Send",
+  "Sort by": "Sort by",
+  "Search": "Search",
+  "ascending": "ascending",
+  "descending": "descending",
+  "Order to": "Order to",
+  "date creation": "date creation",
+  "title": "title",
+  "views amount": "views amount",
+  "All": "All",
+  "IT": "IT",
+  "Science": "Science",
+  "Economics": "Economics",
+  "Articles not found": "Articles not found"
 }

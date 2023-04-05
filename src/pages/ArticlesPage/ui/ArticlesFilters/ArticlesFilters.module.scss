@@ -1,0 +1,17 @@
+.toolsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    margin-top: 15px;
+
+    input {
+        margin-left: 5px;
+    }
+}
+
+.tabs {
+    margin-top: 15px;
+}
