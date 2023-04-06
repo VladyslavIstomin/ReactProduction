@@ -3,6 +3,10 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import AboutPage from './AboutPage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
+import avatar from 'shared/assets/tests/avatar.jpeg';
 
 export default {
     title: 'pages/AboutPage',
@@ -17,7 +21,13 @@ const Template:
 
 export const Light = Template.bind({});
 Light.args = {};
+Light.decorators = [
+    StoreDecorator({}, {})
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({}, {})
+];
