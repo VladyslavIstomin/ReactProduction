@@ -1,8 +1,9 @@
 {
   "Articles page": "Страница со статьями",
   "Article is not found": "Статья не найдена",
-  "Error during getting article": "Error during getting article",
-  "Comments section": "Comments section",
-  "Back to article list": "Back to article list",
-  "Recommending": "Recommending"
+  "Error during getting article": "Ошибка при получении статьи",
+  "Comments section": "Секция комментариев",
+  "Back to article list": "Вернуться к списку статей",
+  "Recommending": "Рекомендации",
+  "Refactoring": "Refactoring"
 }

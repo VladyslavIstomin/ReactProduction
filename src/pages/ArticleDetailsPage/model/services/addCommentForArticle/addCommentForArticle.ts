@@ -12,17 +12,17 @@ export const addCommentForArticle = createAsyncThunk<CommentType, string, ThunkC
     async (text, thunkAPI) => {
         const { dispatch, rejectWithValue, extra, getState } = thunkAPI;
 
-        const userData = getUserData(getState());
+        const authUser = getUserData(getState());
         const article = getArticleData(getState());
 
-        if (!userData || !text || !article) {
+        if (!authUser || !text || !article) {
             return rejectWithValue('no data');
         }
 
         try {
             const response = await extra.api.post<CommentType>('/comments', {
                 articleId: article?.id,
-                userId: userData.authUser?.id,
+                userId: authUser?.id,
                 text,
             });
             if (!response.data) {

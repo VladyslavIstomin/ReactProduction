@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 import { getUserData } from 'entities/User';
 
 export function RequireAuth({ children }: { children: JSX.Element }) {
-    const user = useSelector(getUserData);
+    const authUser = useSelector(getUserData);
     const location = useLocation();
 
-    if (!user.authUser) {
+    if (!authUser) {
         return <Navigate to="/" state={{ from: location }} replace />;
     }
 

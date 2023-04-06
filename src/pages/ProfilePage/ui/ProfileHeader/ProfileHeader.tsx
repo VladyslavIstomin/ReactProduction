@@ -19,7 +19,7 @@ export const ProfileHeader = ({ className }: ProfileHeaderProps) => {
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserData);
     const profileData = useSelector(getProfileData);
-    const canEdit = authData.authUser?.id === profileData?.id;
+    const canEdit = authData?.id === profileData?.id;
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadyOnly(false));

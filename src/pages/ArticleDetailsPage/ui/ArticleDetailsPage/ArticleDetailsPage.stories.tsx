@@ -2,8 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { articleDetailsCommentsReducer } from '../model/slice/articleDetailsCommentsSlice';
-import { articleDetailsPageReducer } from '../model/slice';
+import { articleDetailsPageReducer } from '../../model/slice';
 
 export default {
     title: 'pages/ArticleDetailsPage',

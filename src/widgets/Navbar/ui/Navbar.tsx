@@ -6,6 +6,9 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserData, userActions } from 'entities/User';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePaths } from 'shared/config/routerConfig/routerConfig';
 
 interface NavbarProps {
     className?: string
@@ -13,7 +16,7 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
     const { t, i18n } = useTranslation();
-    const { authUser } = useSelector(getUserData);
+    const authUser = useSelector(getUserData);
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
 
@@ -32,7 +35,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authUser) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED}>
+                <AppLink
+                    className={cls.appName}
+                    to={RoutePaths.main}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('React Production')}
+                </AppLink>
+                <AppLink
+                    to={RoutePaths.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Create new Article')}
+                </AppLink>
+                <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED} className={cls.btn}>
                     {t('Sign out')}
                 </Button>
             </header>
@@ -41,7 +57,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button onClick={onOpenHandler} theme={ButtonTheme.CLEAR_INVERTED}>
+            <AppLink
+                className={cls.appName}
+                to={RoutePaths.main}
+                theme={AppLinkTheme.SECONDARY}
+            >
+                {t('React Production')}
+            </AppLink>
+            <Button onClick={onOpenHandler} theme={ButtonTheme.CLEAR_INVERTED} className={cls.btn}>
                 {t('Sign in')}
             </Button>
             {isOpen && <LoginModal isOpen={isOpen} onClose={onCloseHandler}/>}
