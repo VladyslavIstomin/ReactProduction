@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "react-production",
+  "builds": [
+    { "src": "./json-server/index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
+}
