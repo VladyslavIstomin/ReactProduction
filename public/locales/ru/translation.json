@@ -4,8 +4,10 @@
   "Main page": "Главная страница",
   "About page": "Страница Про нас",
   "Toggle": "Переключатель,",
-  "Main page link": "Ссылка на шлавнуб страницу",
-  "About page link": "Ссылка на страницу Про нас",
+  "Main page link": "Главная страница",
+  "About page link": "Страница Про нас",
+  "Profile page link": "Старница Профайла",
+  "Articles page link": "Страница Статей",
   "Not Found Page": "Страница не найдена",
   "Something went wrong": "Что-то пошло не так",
   "Short Language": "Ру",
@@ -40,5 +42,5 @@
   "Economics": "Экономика",
   "Articles not found": "Статьи не найдены",
   "React Production": "React Production",
-  "Create new Article": "Create new Article"
+  "Create new Article": "Создать новую статью"
 }
