@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 import { Article, articleDetailsReducer } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
@@ -88,3 +88,8 @@ Normal.decorators = [
         { articles: articleDetailsReducer }
     )
 ];
+Normal.story = {
+    parameters: {
+        loki: { skip: true },
+    }
+};
