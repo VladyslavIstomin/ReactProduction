@@ -1,6 +1,6 @@
 import { StateScheme } from 'app/providers/StoreProvider';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
-import { ValidateProfileErrors } from 'entities/Profile';
+import { ValidateProfileErrors } from '../../type/ProfileScheme';
 
 describe('getProfileValidateErrors.test', () => {
     const validateErrors = [ValidateProfileErrors.SERVER_ERROR];

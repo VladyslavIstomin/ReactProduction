@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LoginForm from './LoginForm';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { loginReducer } from 'features/AuthByUsername';
+import { loginReducer } from '../../model/slice/loginSlice';
 
 export default {
     title: 'features/LoginForm',

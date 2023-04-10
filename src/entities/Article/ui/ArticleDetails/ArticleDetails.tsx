@@ -18,10 +18,10 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
-import { ArticleTextComponent } from 'entities/Article/ui/ArticleTextComponent/ArticleTextComponent';
-import { ArticleCodeComponent } from 'entities/Article/ui/ArticleCodeComponent/ArticleCodeComponent';
-import { ArticleImageComponent } from 'entities/Article/ui/ArticleImageComponent/ArticleImageComponent';
+import { ArticleBlockType } from '../../model/types/article';
+import { ArticleTextComponent } from '../ArticleTextComponent/ArticleTextComponent';
+import { ArticleCodeComponent } from '../ArticleCodeComponent/ArticleCodeComponent';
+import { ArticleImageComponent } from '../ArticleImageComponent/ArticleImageComponent';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {

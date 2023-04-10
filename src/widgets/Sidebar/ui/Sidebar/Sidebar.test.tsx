@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { Sidebar } from 'widgets/Sidebar';
+import { Sidebar } from './Sidebar';
 import userEvent from '@testing-library/user-event';
 import { ComponentRender } from 'shared/lib/tests/ComponentRender';
 

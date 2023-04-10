@@ -27,7 +27,8 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
-        'react-hooks'
+        'react-hooks',
+        'istomin-plugin'
     ],
     'rules': {
         'indent': ['error', 4],
@@ -44,6 +45,7 @@ module.exports = {
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'istomin-plugin/path-checker': 'error'
     },
     'globals': {
         __dirname: true,
