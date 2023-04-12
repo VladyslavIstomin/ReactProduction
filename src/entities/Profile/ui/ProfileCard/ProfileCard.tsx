@@ -8,6 +8,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string;
@@ -45,22 +46,27 @@ export const ProfileCard = (props: ProfileCardProps) => {
     
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, { [cls.isLoading]: true }, [className])}>
+            <HStack
+                justify='center'
+                w100
+                align='center'
+                className={classNames(cls.ProfileCard, { [cls.isLoading]: true }, [className])}
+            >
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack justify='center' w100 className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     title={t('There is an error')}
                     text={t('Try to refresh')}
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         );
     }
 
@@ -69,91 +75,89 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.content}>
-                {
-                    data?.avatar && (
-                        <div className={cls.avatarWrapper}>
-                            <Avatar
-                                src={data.avatar}
-                                size={150}
-                            />
-                        </div>
-                    )
-                }
-                <div>
-                    <Input
-                        className={cls.input}
-                        value={data?.first}
-                        label={t('Your name')}
-                        readonly={readonly}
-                        onChangeCallback={onChangeFirstName}
-                    />
-                </div>
-                <div>
-                    <Input
-                        className={cls.input}
-                        value={data?.lastname}
-                        label={t('Your last name')}
-                        readonly={readonly}
-                        onChangeCallback={onChangeLastName}
-                    />
-                </div>
-                <div>
-                    <Input
-                        className={cls.input}
-                        value={data?.city}
-                        label={t('City')}
-                        readonly={readonly}
-                        onChangeCallback={onChangeCity}
-                    />
-                </div>
-                <div>
-                    <Input
-                        className={cls.input}
-                        value={data?.age}
-                        label={t('Your age')}
-                        readonly={readonly}
-                        type="number"
-                        min="1"
-                        onChangeCallback={onChangeAge}
-                    />
-                </div>
-                <div>
-                    <Input
-                        className={cls.input}
-                        value={data?.username}
-                        label={t('Enter your username')}
-                        readonly={readonly}
-                        onChangeCallback={onChangeUsername}
-                    />
-                </div>
-                <div>
-                    <Input
-                        className={cls.input}
-                        value={data?.avatar}
-                        label={t('Enter avatar url')}
-                        readonly={readonly}
-                        onChangeCallback={onChangeAvatar}
-                    />
-                </div>
-                <div>
-                    <CurrencySelect
-                        value={data?.currency}
-                        className={cls.topMargin}
-                        onChange={onChangeCurrency}
-                        readonly={readonly}
-                    />
-                </div>
-                <div>
-                    <CountrySelect
-                        value={data?.currency}
-                        className={cls.topMargin}
-                        onChange={onChangeCountry}
-                        readonly={readonly}
-                    />
-                </div>
+        <VStack gap={16} w100 className={classNames(cls.ProfileCard, mods, [className])}>
+            {
+                data?.avatar && (
+                    <HStack justify='center' w100 className={cls.avatarWrapper}>
+                        <Avatar
+                            src={data.avatar}
+                            size={150}
+                        />
+                    </HStack>
+                )
+            }
+            <div>
+                <Input
+                    className={cls.input}
+                    value={data?.first}
+                    label={t('Your name')}
+                    readonly={readonly}
+                    onChangeCallback={onChangeFirstName}
+                />
             </div>
-        </div>
+            <div>
+                <Input
+                    className={cls.input}
+                    value={data?.lastname}
+                    label={t('Your last name')}
+                    readonly={readonly}
+                    onChangeCallback={onChangeLastName}
+                />
+            </div>
+            <div>
+                <Input
+                    className={cls.input}
+                    value={data?.city}
+                    label={t('City')}
+                    readonly={readonly}
+                    onChangeCallback={onChangeCity}
+                />
+            </div>
+            <div>
+                <Input
+                    className={cls.input}
+                    value={data?.age}
+                    label={t('Your age')}
+                    readonly={readonly}
+                    type="number"
+                    min="1"
+                    onChangeCallback={onChangeAge}
+                />
+            </div>
+            <div>
+                <Input
+                    className={cls.input}
+                    value={data?.username}
+                    label={t('Enter your username')}
+                    readonly={readonly}
+                    onChangeCallback={onChangeUsername}
+                />
+            </div>
+            <div>
+                <Input
+                    className={cls.input}
+                    value={data?.avatar}
+                    label={t('Enter avatar url')}
+                    readonly={readonly}
+                    onChangeCallback={onChangeAvatar}
+                />
+            </div>
+            <div>
+                <CurrencySelect
+                    value={data?.currency}
+                    className={cls.topMargin}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
+                />
+            </div>
+            <div>
+                <CountrySelect
+                    value={data?.currency}
+                    className={cls.topMargin}
+                    onChange={onChangeCountry}
+                    readonly={readonly}
+                />
+            </div>
+        </VStack>
     );
 };

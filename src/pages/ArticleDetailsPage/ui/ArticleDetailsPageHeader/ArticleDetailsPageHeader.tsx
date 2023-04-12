@@ -1,4 +1,3 @@
-import cls from './ArticleDetailsPageHeader.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
@@ -8,6 +7,7 @@ import { RoutePaths } from 'shared/config/routerConfig/routerConfig';
 import { useSelector } from 'react-redux';
 import { getCanEditArticle } from '../../model/selectors/getCanEditArticle';
 import { getArticleData } from 'entities/Article';
+import { HStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
@@ -28,7 +28,7 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack w100 justify={'between'} className={classNames('', {}, [className])}>
             <Button onClick={onBackList} theme={ButtonTheme.OUTLINE}>
                 {t('Back to article list')}
             </Button>
@@ -37,6 +37,6 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
                     {t('Refactoring')}
                 </Button>
             )}
-        </div>
+        </HStack>
     );
 });

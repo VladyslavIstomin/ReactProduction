@@ -1,4 +1,3 @@
-import cls from './ArticleDetailsPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
@@ -21,6 +20,7 @@ import { getArticleDetailsRecommendIsLoading } from '../../model/selectors/getRe
 import { fetchArticleRecommend } from '../../model/services/fetchArticleRecommend/fetchArticleRecommend';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -50,7 +50,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 {t('Article is not found')}
             </Page>
         );
@@ -58,19 +58,20 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount >
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id}/>
-                <Text className={cls.commentTitle} title={t('Recommending')} size={TextSize.L} />
-                <ArticleList
-                    target={'_blank'}
-                    articles={recommend}
-                    isLoading={recommendIsLoading}
-                    className={cls.list}
-                />
-                <Text className={cls.commentTitle} title={t('Comments section')} size={TextSize.L} />
-                <AddComentForm onSendComment={onSendComment} />
-                <CommentList isLoading={commentsIsLoading} comments={comments} />
+            <Page className={classNames('', {}, [className])}>
+                <VStack gap={16}>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id}/>
+                    <Text title={t('Recommending')} size={TextSize.L} />
+                    <ArticleList
+                        target={'_blank'}
+                        articles={recommend}
+                        isLoading={recommendIsLoading}
+                    />
+                    <Text title={t('Comments section')} size={TextSize.L} />
+                    <AddComentForm onSendComment={onSendComment} />
+                    <CommentList isLoading={commentsIsLoading} comments={comments} />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

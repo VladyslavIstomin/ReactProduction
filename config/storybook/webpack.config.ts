@@ -5,7 +5,12 @@ import { buildCssLoader } from '../webpackBuilder/buildCssLoader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
-        src: path.resolve(__dirname, '..', '..', 'src')
+        src: path.resolve(__dirname, '..', '..', 'src'),
+        entry: '',
+        buildLocales: '',
+        locales: '',
+        output: '',
+        html: ''
     };
     config.resolve?.modules?.unshift(paths.src);
     config.module?.rules?.push(buildCssLoader(true));
