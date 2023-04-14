@@ -35,11 +35,25 @@ TitleTextError.args = {
     theme: TextTheme.ERROR
 };
 
-export const TitleTextLarge = Template.bind({});
-TitleTextLarge.args = {
+export const TitleTextL = Template.bind({});
+TitleTextL.args = {
     title: 'Title title',
     text: 'Text text text',
     size: TextSize.L
+};
+
+export const TitleTextM = Template.bind({});
+TitleTextM.args = {
+    title: 'Title title',
+    text: 'Text text text',
+    size: TextSize.M
+};
+
+export const TitleTextS = Template.bind({});
+TitleTextS.args = {
+    title: 'Title title',
+    text: 'Text text text',
+    size: TextSize.S
 };
 
 export const TitleTextCenter = Template.bind({});

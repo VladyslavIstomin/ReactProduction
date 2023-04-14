@@ -17,10 +17,10 @@ export const App = () => {
         <div className="app">
             <Suspense fallback=''>
                 <Navbar />
-                <div className='content-page'>
+                <main className='content-page'>
                     <Sidebar />
                     {inited && <AppRouter/>}
-                </div>
+                </main>
             </Suspense>
         </div>
     );
