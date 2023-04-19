@@ -1435,6 +1435,12 @@
       "userId": "2",
       "text": "aaa",
       "id": "xjqMw7B"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test",
+      "id": "OvRrBAs"
     }
   ],
   "users": [
@@ -1467,12 +1473,12 @@
     },
     {
       "id": "2",
-      "first": "Ihor",
+      "first": "Vova",
       "lastname": "asf",
       "age": 465,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Belarus",
-      "city": "Moscow",
+      "city": "Kiev",
       "username": "admin213",
       "avatar": "https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg"
     }

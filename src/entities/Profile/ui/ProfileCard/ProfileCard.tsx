@@ -145,15 +145,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
             <div>
                 <CurrencySelect
                     value={data?.currency}
-                    className={cls.topMargin}
                     onChange={onChangeCurrency}
                     readonly={readonly}
                 />
             </div>
             <div>
                 <CountrySelect
-                    value={data?.currency}
-                    className={cls.topMargin}
+                    value={data?.country}
                     onChange={onChangeCountry}
                     readonly={readonly}
                 />
