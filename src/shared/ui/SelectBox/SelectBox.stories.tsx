@@ -8,6 +8,9 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [
+        (Story) => <div style={{ padding: '200px' }}><Story /></div>
+    ]
 } as ComponentMeta<typeof SelectBox>;
 
 const Template: ComponentStory<typeof SelectBox> = (args) => <SelectBox {...args} />;

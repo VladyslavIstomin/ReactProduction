@@ -37,7 +37,7 @@ export const CommentItem = memo(({ className, isLoading, comment }: CommentItemP
 
     return (
         <VStack w100 gap={8} className={classNames(cls.CommentItem, {}, [className])}>
-            <AppLink to={`${RoutePaths.profile}/${comment.user.id}`} className={cls.header}>
+            <AppLink to={`${RoutePaths.profile}${comment.user.id}`} className={cls.header}>
                 {comment.user.avatar && <Avatar size={30} src={comment.user.avatar}/>}
                 <Text title={comment.user.username} className={cls.username} />
             </AppLink>
